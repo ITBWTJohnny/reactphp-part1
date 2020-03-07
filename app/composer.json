@@ -1,0 +1,8 @@
+{
+    "require": {
+        "react/react": "^1.0",
+        "react/http": "^0.8.6",
+        "react/filesystem": "^0.1.2",
+        "react/mysql": "^0.5.4"
+    }
+}

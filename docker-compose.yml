@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  php:
+    build:
+      context: ./
+      dockerfile: ./docker/php/php.docker
+    links:
+      - mysql:mysql
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    volumes:
+      - ./app:/var/www/website
+    command: php index.php
+  mysql:
+    image: mariadb
+    environment:
+      MYSQL_TCP_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
